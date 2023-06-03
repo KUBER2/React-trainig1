@@ -1,7 +1,13 @@
-import styles from "./UsersList.modul.css";
+import styles from "./UsersList.module.css";
+
+import UserItemList from "./UserItemList";
 
 const UsersList = (props) => {
-  return <div className={styles.usersList}></div>;
+  const userListItems = props.data.map((user) => (
+    <UserItemList data={user}></UserItemList>
+  ));
+
+  return <div className={styles.usersList}>{userListItems}</div>;
 };
 
 export default UsersList;
